@@ -1,0 +1,7 @@
+1st: Cover page
+2nd: Theory
+3rd: Q1. Write a program to print "Patan Multiple Campus".
+     code:
+     Q2. ..... Q5.
+4th: Output of Q1 ... Q5
+5th: Discussion and conclusion
