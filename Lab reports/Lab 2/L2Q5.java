@@ -6,7 +6,7 @@ public class L2Q5
 	{
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("Enter two integers: ");
+		System.out.println("Enter two integers: ");
 		int a = sc.nextInt();
 		int b = sc.nextInt();
 

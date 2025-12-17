@@ -6,7 +6,7 @@ public class L2Q3
 	{
 		Scanner sc = new Scanner(System.in);
         
-		System.out.print("Enter three numbers: ");
+		System.out.println("Enter three numbers: ");
 		int a = sc.nextInt();
 		int b = sc.nextInt();
 		int c = sc.nextInt();
