@@ -4,7 +4,7 @@ public class L4Q4
 	public static void main(String[] args)
 	{
         	Scanner sc = new Scanner(System.in);
-        	System.out.print("Enter a number: ");
+        	System.out.println("Enter a number: ");
         	int n = sc.nextInt();
 
         	int sum = 0;
