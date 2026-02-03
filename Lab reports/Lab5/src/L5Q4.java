@@ -40,7 +40,7 @@ public class L5Q4 {
         {
             for(int j=0; j<3; j++)
             {
-                System.out.println(c[i][j]+" ");
+                System.out.print(c[i][j]+" \t");
             }
             System.out.println();
         }
