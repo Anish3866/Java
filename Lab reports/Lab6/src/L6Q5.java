@@ -1,7 +1,7 @@
 class Time {
-    private int hours;
-    private int minutes;
-    private int seconds;
+    int hours;
+    int minutes;
+    int seconds;
 
     Time() {
         hours = 0;
@@ -16,64 +16,56 @@ class Time {
     }
 
     Time addTime(Time t) {
-        int h = this.hours + t.hours;
-        int m = this.minutes + t.minutes;
-        int s = this.seconds + t.seconds;
+        int h = hours + t.hours;
+        int m = minutes + t.minutes;
+        int s = seconds + t.seconds;
 
         if (s >= 60) {
-            s = s - 60;
-            m = m + 1;
+            m = m + (s / 60);
+            s = s % 60;
         }
 
         if (m >= 60) {
-            m = m - 60;
-            h = h + 1;
+            h = h + (m / 60);
+            m = m % 60;
         }
 
         return new Time(h, m, s);
     }
 
     Time subtractTime(Time t) {
-        int h = this.hours - t.hours;
-        int m = this.minutes - t.minutes;
-        int s = this.seconds - t.seconds;
+        int total1 = hours * 3600 + minutes * 60 + seconds;
+        int total2 = t.hours * 3600 + t.minutes * 60 + t.seconds;
 
-        if (s < 0) {
-            s = s + 60;
-            m = m - 1;
+        int diff = total1 - total2;
+
+        if (diff < 0) {
+            diff = -diff;
         }
 
-        if (m < 0) {
-            m = m + 60;
-            h = h - 1;
-        }
+        int h = diff / 3600;
+        diff = diff % 3600;
+
+        int m = diff / 60;
+        int s = diff % 60;
 
         return new Time(h, m, s);
-    }
-
-    void displayTime() {
-        System.out.printf(+hours+":"+minutes+":"+seconds+"\n");
     }
 }
 
 public class L6Q5 {
     public static void main(String[] args) {
+
         Time t1 = new Time(2, 45, 50);
-        Time t2 = new Time(1, 30, 40);
+        Time t2 = new Time(1, 20, 30);
 
         Time sum = t1.addTime(t2);
-        Time diff = t1.subtractTime(t2);
+        Time difference = t1.subtractTime(t2);
 
-        System.out.print("1st time = ");
-        t1.displayTime();
+        System.out.println("Added Time:");
+        System.out.println(sum.hours + ":" + sum.minutes + ":" + sum.seconds);
 
-        System.out.print("2nd time = ");
-        t2.displayTime();
-
-        System.out.print("time sum = ");
-        sum.displayTime();
-
-        System.out.print("time sub = ");
-        diff.displayTime();
+        System.out.println("Subtracted Time:");
+        System.out.println(difference.hours + ":" + difference.minutes + ":" + difference.seconds);
     }
 }
