@@ -31,7 +31,6 @@ class Student extends Person {
     }
 }
 
-// -------- Multi Level --------
 class Employee extends Person {
     double salary;
 
